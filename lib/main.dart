@@ -29,6 +29,7 @@ class MaterialAppBase extends StatefulWidget {
   State<MaterialAppBase> createState() => _MaterialAppBaseState();
 }
 
+//
 //This already includes scaffold, no need to implement in other pages
 class _MaterialAppBaseState extends State<MaterialAppBase> {
   //Navigation Bar
