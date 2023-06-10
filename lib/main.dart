@@ -32,6 +32,7 @@ class MaterialAppBase extends StatefulWidget {
 //
 //This already includes scaffold, no need to implement in other pages
 class _MaterialAppBaseState extends State<MaterialAppBase> {
+  bool isDark = true;
   //Navigation Bar
   int _selectedIndex = 0;
   final List<Widget> _widgetOptions = const <Widget>[
@@ -47,7 +48,7 @@ class _MaterialAppBaseState extends State<MaterialAppBase> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         body: Center(
           child: _widgetOptions.elementAt(_selectedIndex),
         ),
