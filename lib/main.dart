@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 //Pages
 import 'package:weather_app/Ankush/Explore.dart';
 import 'package:weather_app/Ankush/HomePage.dart';
-import 'package:weather_app/Deepak/ProfilePage.dart';
-import 'package:weather_app/Deepak/SearchPage.dart';
+import 'package:weather_app/Debasish/ProfilePage.dart';
+import 'package:weather_app/Debasish/SearchPage.dart';
 
 //Assets
 import 'package:google_nav_bar/google_nav_bar.dart';
