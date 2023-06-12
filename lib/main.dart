@@ -77,57 +77,71 @@ class _MaterialAppBaseState extends State<MaterialAppBase> {
       theme: isDarkTheme ? ThemeData.dark() : ThemeData.light(),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          leadingWidth: 240,
-          leading: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Text(
-                  DateFormat('yMMMMd').format(DateTime.now()),
-                  style: isDarkTheme
-                      ? const TextStyle(color: Colors.white)
-                      : const TextStyle(color: Colors.black),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 5.0, left: 2.0),
-                child: Row(
+        appBar: _selectedIndex == 0
+            ? AppBar(
+                leadingWidth: 240,
+                leading: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Icon(
-                      Icons.location_on,
-                      size: 15,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Text(DateFormat('yMMMMd').format(DateTime.now()),
+                          style: GoogleFonts.monda(
+                              color: isDarkTheme ? Colors.white : Colors.black)
+                          // isDarkTheme
+                          //     ? const TextStyle(color: Colors.white)
+                          //     : const TextStyle(color: Colors.black),
+                          ),
                     ),
-                    Text(
-                      country!.toUpperCase(),
-                      style: GoogleFonts.ubuntu(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5.0, left: 2.0),
+                      child: Row(
+                        children: [
+                          Icon(Icons.location_on,
+                              size: 15,
+                              color: isDarkTheme ? Colors.white : Colors.black),
+                          Text(
+                            country!.toUpperCase(),
+                            style: GoogleFonts.ubuntu(
+                                color:
+                                    isDarkTheme ? Colors.white : Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            ', ${adminArea!}',
+                            style: TextStyle(
+                                color:
+                                    isDarkTheme ? Colors.white : Colors.black),
+                          )
+                        ],
+                      ),
                     ),
-                    Text(
-                      ', ${adminArea!}',
-                      style: const TextStyle(color: Colors.white),
-                    )
                   ],
                 ),
-              ),
-            ],
-          ),
-          backgroundColor: isDarkTheme ? Colors.black : Colors.white,
-          actions: [
-            //the theme switch button
-            DarlightButton(
-              type: Darlights.DarlightTwo,
-              onChange: (ThemeMode theme) {
-                setState(() {
-                  isDarkTheme = !isDarkTheme;
-                });
-              },
-            ),
-          ],
-          shadowColor: Colors.orange,
-        ),
+                backgroundColor: isDarkTheme ? Colors.black : Colors.white,
+                actions: [
+                  //the theme switch button
+                  DarlightButton(
+                    type: Darlights.DarlightTwo,
+                    onChange: (ThemeMode theme) {
+                      setState(() {
+                        isDarkTheme = !isDarkTheme;
+                      });
+                    },
+                  ),
+                ],
+              )
+            : _selectedIndex == 1
+                ?
+                //Implement Search Page AppBar Here
+                AppBar(
+                    title: const Text(
+                      'Search',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  )
+                : null,
         backgroundColor: isDarkTheme == true ? Colors.black : Colors.white,
         body: Center(
           child: _widgetOptions.elementAt(_selectedIndex),
