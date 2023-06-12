@@ -40,6 +40,7 @@ dependencies:
   dark_light_button: ^0.0.2
   intl: ^0.18.1
   location: ^4.4.0
+  geocoding: ^2.1.0
 
 
 dev_dependencies:

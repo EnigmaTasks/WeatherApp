@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 //Pages
 import 'package:weather_app/Ankush/Explore.dart';
 import 'package:weather_app/Ankush/HomePage.dart';
+import 'package:weather_app/Ankush/location_service.dart';
 import 'package:weather_app/Debasish/ProfilePage.dart';
 import 'package:weather_app/Debasish/SearchPage.dart';
 
@@ -46,6 +47,27 @@ class _MaterialAppBaseState extends State<MaterialAppBase> {
   //Theme
   bool isDarkTheme = true;
 
+  //location
+  String? country = '', adminArea = '';
+  void getLocation() async {
+    final service = LocationService();
+    final locationData = await service.getLocation();
+    if (locationData != null) {
+      final placeMark = await service.getPlaceMark(locationData: locationData);
+      setState(() {
+        country = placeMark?.country ?? "couldn't get country";
+        adminArea = placeMark?.administrativeArea ?? "couldn't get state";
+      });
+    }
+  }
+
+  //init
+  @override
+  void initState() {
+    super.initState();
+    getLocation();
+  }
+
   //Build()
   @override
   Widget build(BuildContext context) {
@@ -64,6 +86,10 @@ class _MaterialAppBaseState extends State<MaterialAppBase> {
                     ? const TextStyle(color: Colors.white)
                     : const TextStyle(color: Colors.black),
               ),
+              Text(
+                '${country!}, ${adminArea!}',
+                style: TextStyle(color: Colors.white),
+              )
             ],
           ),
           backgroundColor: isDarkTheme ? Colors.black : Colors.white,
