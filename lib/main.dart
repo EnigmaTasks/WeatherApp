@@ -13,6 +13,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:dark_light_button/dark_light_button.dart';
 import 'package:intl/intl.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 //Main
 void main() {
@@ -77,19 +78,40 @@ class _MaterialAppBaseState extends State<MaterialAppBase> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          leadingWidth: 120,
+          leadingWidth: 240,
           leading: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                DateFormat('yMMMMd').format(DateTime.now()),
-                style: isDarkTheme
-                    ? const TextStyle(color: Colors.white)
-                    : const TextStyle(color: Colors.black),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  DateFormat('yMMMMd').format(DateTime.now()),
+                  style: isDarkTheme
+                      ? const TextStyle(color: Colors.white)
+                      : const TextStyle(color: Colors.black),
+                ),
               ),
-              Text(
-                '${country!}, ${adminArea!}',
-                style: TextStyle(color: Colors.white),
-              )
+              Padding(
+                padding: const EdgeInsets.only(top: 5.0, left: 2.0),
+                child: Row(
+                  children: [
+                    const Icon(
+                      Icons.location_on,
+                      size: 15,
+                    ),
+                    Text(
+                      country!.toUpperCase(),
+                      style: GoogleFonts.ubuntu(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      ', ${adminArea!}',
+                      style: const TextStyle(color: Colors.white),
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
           backgroundColor: isDarkTheme ? Colors.black : Colors.white,
@@ -104,6 +126,7 @@ class _MaterialAppBaseState extends State<MaterialAppBase> {
               },
             ),
           ],
+          shadowColor: Colors.orange,
         ),
         backgroundColor: isDarkTheme == true ? Colors.black : Colors.white,
         body: Center(
