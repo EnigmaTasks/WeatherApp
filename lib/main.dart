@@ -10,6 +10,8 @@ import 'package:weather_app/Debasish/SearchPage.dart';
 //Assets
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:dark_light_button/dark_light_button.dart';
+import 'package:intl/intl.dart';
 
 //Main
 void main() {
@@ -32,7 +34,6 @@ class MaterialAppBase extends StatefulWidget {
 //
 //This already includes scaffold, no need to implement in other pages
 class _MaterialAppBaseState extends State<MaterialAppBase> {
-  bool isDark = true;
   //Navigation Bar
   int _selectedIndex = 0;
   final List<Widget> _widgetOptions = const <Widget>[
@@ -42,13 +43,43 @@ class _MaterialAppBaseState extends State<MaterialAppBase> {
     ProfilePage()
   ];
 
+  //Theme
+  bool isDarkTheme = true;
+
   //Build()
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //Changing Theme based on boolean value
+      theme: isDarkTheme ? ThemeData.dark() : ThemeData.light(),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.white,
+        appBar: AppBar(
+          leadingWidth: 120,
+          leading: Column(
+            children: [
+              Text(
+                DateFormat('yMMMMd').format(DateTime.now()),
+                style: isDarkTheme
+                    ? const TextStyle(color: Colors.white)
+                    : const TextStyle(color: Colors.black),
+              ),
+            ],
+          ),
+          backgroundColor: isDarkTheme ? Colors.black : Colors.white,
+          actions: [
+            //the theme switch button
+            DarlightButton(
+              type: Darlights.DarlightTwo,
+              onChange: (ThemeMode theme) {
+                setState(() {
+                  isDarkTheme = !isDarkTheme;
+                });
+              },
+            ),
+          ],
+        ),
+        backgroundColor: isDarkTheme == true ? Colors.black : Colors.white,
         body: Center(
           child: _widgetOptions.elementAt(_selectedIndex),
         ),
