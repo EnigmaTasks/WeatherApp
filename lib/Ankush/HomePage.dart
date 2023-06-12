@@ -11,140 +11,139 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Column(
       children: [
-        Positioned(
-          top: 60,
-          left: 10,
-          right: 10,
-          child: Image.asset('lib/assets/wrldmap.png'),
-        ),
-        Positioned(
-          top: 110,
-          left: 110,
-          right: 110,
-          child: Image.asset('lib/assets/cloud.png'),
-        ),
-        Positioned(
-          top: 280,
-          left: 165,
-          right: 2,
-          child: Text('Thunder',
-              style: GoogleFonts.aBeeZee(
-                  fontSize: 18, fontWeight: FontWeight.bold)),
-        ),
-        Positioned(
-          top: 320,
-          left: 145,
-          right: 2,
-          child: Text(
-            '13\u00B0',
-            style:
-                GoogleFonts.aBeeZee(fontSize: 90, fontWeight: FontWeight.bold),
+        SizedBox(
+          height: 260,
+          child: Stack(
+            children: [
+              Positioned(
+                top: 70,
+                left: 10,
+                right: 10,
+                child: Image.asset('lib/assets/wrldmap.png'),
+              ),
+              Positioned(
+                top: 50,
+                left: 95,
+                right: 95,
+                child: Image.asset(
+                  'lib/assets/cloud.png',
+                  scale: 0.8,
+                ),
+              ),
+            ],
           ),
         ),
-        Positioned(
-          right: 2,
-          left: 2,
-          top: 470,
-          child: Container(
-            height: 120,
-            width: 300,
-            // color: Colors.orange,
-            child: Row(
+        const SizedBox(
+          height: 15,
+        ),
+        Text(
+          'Thunder',
+          style: GoogleFonts.aBeeZee(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        Text(
+          '  13\u00B0',
+          style:
+              GoogleFonts.aBeeZee(fontSize: 100, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(
+          height: 60,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(
-                  width: 20,
+                Padding(
+                  padding: const EdgeInsets.only(top: 0.0),
+                  child: Image.asset(
+                    'lib/assets/cloud1.png',
+                    scale: 0.65,
+                  ),
                 ),
-                //
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 0.0),
-                      child: Image.asset(
-                        'lib/assets/cloud1.png',
-                        scale: 0.65,
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 8.0, top: 0),
-                      child: Text(
-                        '01:00 pm',
-                        style: TextStyle(fontSize: 10),
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(top: 4.0, left: 12),
-                      child: Text(
-                        '11\u00B0',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    )
-                  ],
+                const Padding(
+                  padding: EdgeInsets.only(left: 8.0, top: 0),
+                  child: Text(
+                    '01:00 pm',
+                    style: TextStyle(fontSize: 10),
+                  ),
                 ),
-                //
-                const SizedBox(
-                  width: 30,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 0.0),
-                      child: Image.asset(
-                        'lib/assets/cloud2.png',
-                        scale: 0.65,
-                      ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 10.0, left: 12),
+                  child: Text(
+                    '11\u00B0',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 8.0, top: 0),
-                      child: Text(
-                        '04:00 pm',
-                        style: TextStyle(fontSize: 10),
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(top: 4.0, left: 12),
-                      child: Text(
-                        '10\u00B0',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  width: 30,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 0.0),
-                      child: Image.asset(
-                        'lib/assets/cloud3.png',
-                        scale: 0.65,
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 8.0, top: 0),
-                      child: Text(
-                        '07:00 pm',
-                        style: TextStyle(fontSize: 10),
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(top: 4.0, left: 12),
-                      child: Text(
-                        '8\u00B0',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    )
-                  ],
-                ),
+                  ),
+                )
               ],
             ),
-          ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 0.0),
+                  child: Image.asset(
+                    'lib/assets/cloud2.png',
+                    scale: 0.65,
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 8.0, top: 0),
+                  child: Text(
+                    '04:00 pm',
+                    style: TextStyle(fontSize: 10),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 10.0, left: 12),
+                  child: Text(
+                    '10\u00B0',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 0.0),
+                  child: Image.asset(
+                    'lib/assets/cloud3.png',
+                    scale: 0.65,
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 8.0, top: 0),
+                  child: Text(
+                    '07:00 pm',
+                    style: TextStyle(fontSize: 10),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 10.0, left: 12),
+                  child: Text(
+                    '8\u00B0',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ],
         )
       ],
     );

@@ -147,8 +147,8 @@ class _MaterialAppBaseState extends State<MaterialAppBase> {
           child: _widgetOptions.elementAt(_selectedIndex),
         ),
         bottomNavigationBar: Container(
-          decoration: const BoxDecoration(
-            color: Colors.black,
+          decoration: BoxDecoration(
+            color: isDarkTheme ? Colors.black : Colors.grey[100],
           ),
           child: SafeArea(
             child: Padding(
@@ -157,14 +157,14 @@ class _MaterialAppBaseState extends State<MaterialAppBase> {
               child: GNav(
                 rippleColor: Colors.black,
                 hoverColor: Colors.black,
-                backgroundColor: Colors.black,
+                backgroundColor: isDarkTheme ? Colors.black : Colors.grey[100]!,
                 gap: 10,
                 activeColor: Colors.black,
                 iconSize: 20,
                 padding: const EdgeInsets.all(9),
                 duration: const Duration(milliseconds: 250),
-                tabBackgroundColor: Colors.grey[700]!,
-                color: Colors.white,
+                tabBackgroundColor: Colors.grey[400]!,
+                color: isDarkTheme ? Colors.white : Colors.black,
                 tabs: const [
                   GButton(icon: FontAwesomeIcons.homeAlt, text: 'Home'),
                   GButton(icon: FontAwesomeIcons.search, text: 'Search'),
