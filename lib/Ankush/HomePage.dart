@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
+            SizedBox(
               // color: Colors.amber,
               width: 90,
               height: 110,
@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             //
-            Container(
+            SizedBox(
               // color: Colors.amber,
               width: 90,
               height: 110,
@@ -124,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
                       Text(
-                        '01:00 pm',
+                        '04:00 pm',
                         style: TextStyle(fontSize: 10),
                       ),
                     ],
@@ -133,7 +133,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
                       Text(
-                        '11\u00B0',
+                        '13\u00B0',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
@@ -144,8 +144,8 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            //\
-            Container(
+            //
+            SizedBox(
               // color: Colors.amber,
               width: 90,
               height: 110,
@@ -155,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'lib/assets/cloud.png',
+                        'lib/assets/sun.png',
                         scale: 8,
                       ),
                     ],
@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
                       Text(
-                        '01:00 pm',
+                        '07:00 pm',
                         style: TextStyle(fontSize: 10),
                       ),
                     ],
@@ -173,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
                       Text(
-                        '11\u00B0',
+                        '18\u00B0',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
