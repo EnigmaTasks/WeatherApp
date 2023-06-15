@@ -136,10 +136,18 @@ class _MaterialAppBaseState extends State<MaterialAppBase> {
                 ?
                 //Implement Search Page AppBar Here
                 AppBar(
-                    title: const Text(
-                      'Search',
-                      style: TextStyle(color: Colors.white),
+                    title: Text(
+                      'Search for city',
+                      style: TextStyle(
+                          color: isDarkTheme ? Colors.white : Colors.black),
                     ),
+                    centerTitle: true,
+                    leading: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(FontAwesomeIcons.angleLeft),
+                      color: isDarkTheme ? Colors.white : Colors.black,
+                    ),
+                    backgroundColor: isDarkTheme ? Colors.black : Colors.white,
                   )
                 : null,
         backgroundColor: isDarkTheme == true ? Colors.black : Colors.white,
