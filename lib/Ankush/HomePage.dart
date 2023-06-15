@@ -65,92 +65,124 @@ class _HomePageState extends State<HomePage> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 0.0),
-                  child: Image.asset(
-                    'lib/assets/cloud1.png',
-                    scale: 0.65,
+            Container(
+              // color: Colors.amber,
+              width: 90,
+              height: 110,
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'lib/assets/thundercopy.png',
+                        scale: 6.5,
+                      ),
+                    ],
                   ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 8.0, top: 0),
-                  child: Text(
-                    '01:00 pm',
-                    style: TextStyle(fontSize: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text(
+                        '01:00 pm',
+                        style: TextStyle(fontSize: 10),
+                      ),
+                    ],
                   ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 10.0, left: 12),
-                  child: Text(
-                    '11\u00B0',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                  ),
-                )
-              ],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text(
+                        '11\u00B0',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 0.0),
-                  child: Image.asset(
-                    'lib/assets/cloud2.png',
-                    scale: 0.65,
+            //
+            Container(
+              // color: Colors.amber,
+              width: 90,
+              height: 110,
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'lib/assets/windy.png',
+                        scale: 6.5,
+                      ),
+                    ],
                   ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 8.0, top: 0),
-                  child: Text(
-                    '04:00 pm',
-                    style: TextStyle(fontSize: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text(
+                        '01:00 pm',
+                        style: TextStyle(fontSize: 10),
+                      ),
+                    ],
                   ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 10.0, left: 12),
-                  child: Text(
-                    '10\u00B0',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                  ),
-                )
-              ],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text(
+                        '11\u00B0',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 0.0),
-                  child: Image.asset(
-                    'lib/assets/cloud3.png',
-                    scale: 0.65,
+            //\
+            Container(
+              // color: Colors.amber,
+              width: 90,
+              height: 110,
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'lib/assets/cloud.png',
+                        scale: 8,
+                      ),
+                    ],
                   ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 8.0, top: 0),
-                  child: Text(
-                    '07:00 pm',
-                    style: TextStyle(fontSize: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text(
+                        '01:00 pm',
+                        style: TextStyle(fontSize: 10),
+                      ),
+                    ],
                   ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 10.0, left: 12),
-                  child: Text(
-                    '8\u00B0',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                )
-              ],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text(
+                        '11\u00B0',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ],
         )
