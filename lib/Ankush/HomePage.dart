@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
                 left: 95,
                 right: 95,
                 child: Image.asset(
-                  'lib/assets/cloud.png',
+                  'lib/assets/thundercopy.png',
                   scale: 0.8,
                 ),
               ),
@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'lib/assets/thundercopy.png',
+                        'lib/assets/p1.png',
                         scale: 6.5,
                       ),
                     ],
@@ -115,14 +115,14 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'lib/assets/windy.png',
-                        scale: 6.5,
+                        'lib/assets/sun.png',
+                        scale: 8.3,
                       ),
                     ],
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Text(
                         '04:00 pm',
                         style: TextStyle(fontSize: 10),
@@ -155,8 +155,8 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'lib/assets/sun.png',
-                        scale: 8,
+                        'lib/assets/p3.png',
+                        scale: 5.5,
                       ),
                     ],
                   ),
