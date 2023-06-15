@@ -26,7 +26,7 @@ class SearchPage extends StatelessWidget {
         Column(
           children: [
             const SizedBox(
-              height: 40,
+              height: 30,
             ),
             //Search Bar
             Row(
@@ -50,7 +50,7 @@ class SearchPage extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 55,
+              height: 35,
             ),
             // City widgets's row
             Row(
