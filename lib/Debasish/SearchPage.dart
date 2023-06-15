@@ -10,268 +10,348 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
       children: [
-        const SizedBox(
-          height: 20,
-        ),
-        SizedBox(
-          height: 50,
-          width: 300,
-          child: TextField(
-            decoration: InputDecoration(
-              contentPadding: const EdgeInsets.symmetric(vertical: 15),
-              hintText: "Search",
-              prefixIcon: const Icon(FontAwesomeIcons.magnifyingGlass),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(100.0),
-                borderSide: const BorderSide(),
-              ),
+        //Bg world map
+        Center(
+          child: SizedBox(
+            height: 240,
+            child: Image.asset(
+              'lib/assets/wrldmap.png',
+              fit: BoxFit.fill,
             ),
           ),
         ),
+        //Column containing rest of the foreground UI
         Column(
           children: [
-            SizedBox(
-              height: 350,
-              child: Stack(
-                children: [
-                  Positioned(
-                    top: 100,
-                    right: 0,
-                    left: 0,
-                    child: Image.asset(
-                      'lib/assets/wrldmap.png',
-                      scale: 1.8,
-                    ),
-                  ),
-                  Positioned(
-                    top: 30,
-                    left: 35,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 0.0),
-                              child: Text(
-                                'New Delhi',
-                                style: GoogleFonts.aBeeZee(
-                                    fontSize: 28, fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(top: 5.0),
-                              child: Image.asset(
-                                'lib/assets/thundercopy.png',
-                                scale: 4.5,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(0.0),
-                              child: Text(
-                                '33\u00B0 Thunder',
-                                style: GoogleFonts.aBeeZee(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 95.0),
-                              child: Text(
-                                'Burla',
-                                style: GoogleFonts.aBeeZee(
-                                    fontSize: 28, fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 5.0, left: 95),
-                              child: Image.asset(
-                                'lib/assets/windy.png',
-                                scale: 4.5,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 95.0),
-                              child: Text(
-                                '43\u00B0 Wind',
-                                style: GoogleFonts.aBeeZee(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Positioned(
-                    top: 280,
-                    left: 120,
-                    child: SizedBox(
-                      height: 60,
-                      width: 150,
-                      child: ElevatedButton.icon(
-                        onPressed: () {},
-                        icon: const Text('More Cities'),
-                        label: const Icon(CupertinoIcons.sparkles),
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black,
-                            side:
-                                const BorderSide(width: 3, color: Colors.white),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(100))),
+            const SizedBox(
+              height: 40,
+            ),
+            //Search Bar
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 50,
+                  width: 300,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(vertical: 15),
+                      hintText: "Search",
+                      prefixIcon: const Icon(FontAwesomeIcons.magnifyingGlass),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100.0),
+                        borderSide: const BorderSide(),
                       ),
                     ),
                   ),
-                ],
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 55,
+            ),
+            // City widgets's row
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GlassBox(
+                  height: 160.0,
+                  width: 160.0,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'New Delhi',
+                            style: GoogleFonts.aBeeZee(
+                                fontSize: 14, fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'lib/assets/thundercopy.png',
+                            scale: 4.5,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            '33\u00B0 Thunder',
+                            style: GoogleFonts.aBeeZee(
+                                fontSize: 14, fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                GlassBox(
+                  height: 160.0,
+                  width: 160.0,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Burla',
+                            style: GoogleFonts.aBeeZee(
+                                fontSize: 14, fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'lib/assets/windy.png',
+                            scale: 4.5,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            '43\u00B0 Wind',
+                            style: GoogleFonts.aBeeZee(
+                                fontSize: 14, fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 45,
+            ),
+            //More cities button
+            SizedBox(
+              height: 40,
+              width: 120,
+              child: ElevatedButton.icon(
+                onPressed: () {},
+                icon: const Text(
+                  'More Cities',
+                  style: TextStyle(fontSize: 12),
+                ),
+                label: const Icon(CupertinoIcons.sparkles),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                    side: const BorderSide(width: 1, color: Colors.white),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(100))),
               ),
             ),
-          ],
-        ),
-        const SizedBox(
-          height: 25,
-        ),
-        Column(
-          children: [
-            SizedBox(
-              height: 95,
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 160,
-                    child: Image.asset(
-                      'lib/assets/thundercopy.png',
-                      scale: 5.5,
+            const SizedBox(
+              height: 30,
+            ),
+            //Details WIdget
+            Stack(
+              children: [
+                //Alignment Container
+                SizedBox(
+                  // color: Colors.amber,
+                  height: 220,
+                  width: 320,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 28.0),
+                    child:
+                        //Data Glass Box
+                        GlassBox(
+                      height: 200.0,
+                      width: 320.0,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            // color: Colors.amber,
+                            width: 130,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                //One Unit
+                                Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Precipitation',
+                                          style: GoogleFonts.aBeeZee(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          '30%',
+                                          style: GoogleFonts.aBeeZee(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                //2nd Unit
+                                Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Humidity',
+                                          style: GoogleFonts.aBeeZee(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          '30%',
+                                          style: GoogleFonts.aBeeZee(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            height: 100,
+                            color: Colors.white,
+                            width: 1,
+                          ),
+                          Container(
+                            width: 130,
+                            // color: Colors.amber,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                //One Unit
+                                Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Wind',
+                                          style: GoogleFonts.aBeeZee(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          '8 km/h',
+                                          style: GoogleFonts.aBeeZee(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                //2nd Unit
+                                Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Pressure',
+                                          style: GoogleFonts.aBeeZee(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          '840hPa',
+                                          style: GoogleFonts.aBeeZee(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  Positioned(
-                      top: 40,
-                      left: 25,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 0.0),
-                                child: Text(
-                                  'Precipitation',
-                                  style: GoogleFonts.aBeeZee(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 15),
-                                child: Text(
-                                  '30%',
-                                  style: GoogleFonts.aBeeZee(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              )
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 145.0),
-                                child: Text(
-                                  'wind',
-                                  style: GoogleFonts.aBeeZee(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 15, left: 145),
-                                child: Text(
-                                  '8 km/h',
-                                  style: GoogleFonts.aBeeZee(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              )
-                            ],
-                          ),
-                        ],
-                      ))
-                ],
-              ),
-            )
-          ],
-        ),
-        Column(
-          children: [
-            SizedBox(
-              height: 95,
-              child: Stack(
-                children: [
-                  Positioned(
-                      top: 40,
-                      left: 45,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 0.0),
-                                child: Text(
-                                  'Humidity',
-                                  style: GoogleFonts.aBeeZee(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 15),
-                                child: Text(
-                                  '30%',
-                                  style: GoogleFonts.aBeeZee(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              )
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 145.0),
-                                child: Text(
-                                  'Pressure',
-                                  style: GoogleFonts.aBeeZee(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 15, left: 155),
-                                child: Text(
-                                  '840 hPa',
-                                  style: GoogleFonts.aBeeZee(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              )
-                            ],
-                          ),
-                        ],
-                      ))
-                ],
-              ),
+                ),
+                //Top Image
+                Positioned(
+                  left: 125,
+                  top: 0,
+                  child: Image.asset(
+                    'lib/assets/thundercopy.png',
+                    scale: 5.5,
+                  ),
+                ),
+              ],
             )
           ],
         )
