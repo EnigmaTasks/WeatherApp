@@ -10,41 +10,54 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
       children: [
-        const SizedBox(
-          height: 10,
-        ),
-        SizedBox(
-          height: 50,
-          width: 300,
-          child: TextField(
-            decoration: InputDecoration(
-              contentPadding: const EdgeInsets.symmetric(vertical: 15),
-              hintText: "Search",
-              prefixIcon: const Icon(FontAwesomeIcons.magnifyingGlass),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(100.0),
-                borderSide: const BorderSide(),
-              ),
+        //BG Worldmao
+        Center(
+          child: SizedBox(
+            height: 250,
+            child: Image.asset(
+              'lib/assets/wrldmap.png',
+              fit: BoxFit.fill,
             ),
           ),
         ),
+        //Column that contains the foreground UI
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 50,
+                  width: 300,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(vertical: 15),
+                      hintText: "Search",
+                      prefixIcon: const Icon(FontAwesomeIcons.magnifyingGlass),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100.0),
+                        borderSide: const BorderSide(),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        )
+      ],
+    );
+    Column(
+      children: [
         Column(
           children: [
             SizedBox(
               height: 350,
               child: Stack(
                 children: [
-                  Positioned(
-                    top: 120,
-                    right: 0,
-                    left: 0,
-                    child: Image.asset(
-                      'lib/assets/wrldmap.png',
-                      scale: 1.8,
-                    ),
-                  ),
                   Positioned(
                     top: 50,
                     left: 35,

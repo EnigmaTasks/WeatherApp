@@ -143,7 +143,12 @@ class _MaterialAppBaseState extends State<MaterialAppBase> {
                     ),
                     centerTitle: true,
                     leading: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        //indexing used in place of navigator.pop()
+                        setState(() {
+                          _selectedIndex = 0;
+                        });
+                      },
                       icon: const Icon(FontAwesomeIcons.angleLeft),
                       color: isDarkTheme ? Colors.white : Colors.black,
                     ),
