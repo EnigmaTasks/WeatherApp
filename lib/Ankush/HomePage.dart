@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Image.asset(
                         'lib/assets/p1.png',
-                        scale: 6.5,
+                        scale: 5.8,
                       ),
                     ],
                   ),
@@ -120,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Image.asset(
                         'lib/assets/p3.png',
-                        scale: 5.5,
+                        scale: 5.8,
                       ),
                     ],
                   ),
