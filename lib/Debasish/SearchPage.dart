@@ -13,7 +13,7 @@ class SearchPage extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(
-          height: 10,
+          height: 20,
         ),
         SizedBox(
           height: 50,
@@ -37,7 +37,7 @@ class SearchPage extends StatelessWidget {
               child: Stack(
                 children: [
                   Positioned(
-                    top: 120,
+                    top: 100,
                     right: 0,
                     left: 0,
                     child: Image.asset(
@@ -46,7 +46,7 @@ class SearchPage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: 50,
+                    top: 30,
                     left: 35,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -115,14 +115,14 @@ class SearchPage extends StatelessWidget {
                     top: 280,
                     left: 120,
                     child: SizedBox(
-                      height: 50,
+                      height: 60,
                       width: 150,
                       child: ElevatedButton.icon(
                         onPressed: () {},
-                        icon: Text('More Cities'),
-                        label: Icon(CupertinoIcons.sparkles),
+                        icon: const Text('More Cities'),
+                        label: const Icon(CupertinoIcons.sparkles),
                         style: ElevatedButton.styleFrom(
-                            primary: Colors.black,
+                            backgroundColor: Colors.black,
                             side:
                                 const BorderSide(width: 3, color: Colors.white),
                             shape: RoundedRectangleBorder(
@@ -136,34 +136,145 @@ class SearchPage extends StatelessWidget {
           ],
         ),
         const SizedBox(
-          height: 10,
+          height: 25,
         ),
-        // Column(
-        //   children: [
-        //     Positioned(
-        //       top: 10,
-        //       left: 10,
-        //       child: Row(
-        //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        //         children: [
-        //           Column(
-        //             crossAxisAlignment: CrossAxisAlignment.center,
-        //             children: [
-        //               Padding(
-        //                 padding: EdgeInsets.only(top: 0.0),
-        //                 child: Text(
-        //                   'Precipitation',
-        //                   style: GoogleFonts.aBeeZee(
-        //                       fontSize: 18, fontWeight: FontWeight.bold),
-        //                 ),
-        //               )
-        //             ],
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //   ],
-        // ),
+        Column(
+          children: [
+            SizedBox(
+              height: 95,
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: 160,
+                    child: Image.asset(
+                      'lib/assets/thundercopy.png',
+                      scale: 5.5,
+                    ),
+                  ),
+                  Positioned(
+                      top: 40,
+                      left: 25,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 0.0),
+                                child: Text(
+                                  'Precipitation',
+                                  style: GoogleFonts.aBeeZee(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 15),
+                                child: Text(
+                                  '30%',
+                                  style: GoogleFonts.aBeeZee(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              )
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 145.0),
+                                child: Text(
+                                  'wind',
+                                  style: GoogleFonts.aBeeZee(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 15, left: 145),
+                                child: Text(
+                                  '8 km/h',
+                                  style: GoogleFonts.aBeeZee(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ))
+                ],
+              ),
+            )
+          ],
+        ),
+        Column(
+          children: [
+            SizedBox(
+              height: 95,
+              child: Stack(
+                children: [
+                  Positioned(
+                      top: 40,
+                      left: 45,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 0.0),
+                                child: Text(
+                                  'Humidity',
+                                  style: GoogleFonts.aBeeZee(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 15),
+                                child: Text(
+                                  '30%',
+                                  style: GoogleFonts.aBeeZee(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              )
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 145.0),
+                                child: Text(
+                                  'Pressure',
+                                  style: GoogleFonts.aBeeZee(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 15, left: 155),
+                                child: Text(
+                                  '840 hPa',
+                                  style: GoogleFonts.aBeeZee(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ))
+                ],
+              ),
+            )
+          ],
+        )
       ],
     );
   }
