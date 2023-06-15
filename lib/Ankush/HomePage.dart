@@ -45,11 +45,20 @@ class _HomePageState extends State<HomePage> {
         const SizedBox(
           height: 15,
         ),
-        Text(
-          '  13\u00B0',
-          style:
-              GoogleFonts.aBeeZee(fontSize: 100, fontWeight: FontWeight.bold),
-        ),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Text(
+            '  13',
+            style:
+                GoogleFonts.aBeeZee(fontSize: 100, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            '\u00B0',
+            style: GoogleFonts.aBeeZee(
+                fontSize: 90,
+                fontWeight: FontWeight.bold,
+                color: Colors.amberAccent[400]),
+          ),
+        ]),
         const SizedBox(
           height: 60,
         ),

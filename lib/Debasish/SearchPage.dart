@@ -69,7 +69,7 @@ class SearchPage extends StatelessWidget {
                           Text(
                             'New Delhi',
                             style: GoogleFonts.aBeeZee(
-                                fontSize: 14, fontWeight: FontWeight.bold),
+                                fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -86,9 +86,23 @@ class SearchPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            '33\u00B0 Thunder',
+                            '33',
                             style: GoogleFonts.aBeeZee(
-                                fontSize: 14, fontWeight: FontWeight.bold),
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            '\u00B0',
+                            style: GoogleFonts.aBeeZee(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.amberAccent[400]),
+                          ),
+                          Text(
+                            '  Thunder',
+                            style: GoogleFonts.aBeeZee(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white70),
                           ),
                         ],
                       ),
@@ -108,7 +122,7 @@ class SearchPage extends StatelessWidget {
                           Text(
                             'Burla',
                             style: GoogleFonts.aBeeZee(
-                                fontSize: 14, fontWeight: FontWeight.bold),
+                                fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -125,9 +139,26 @@ class SearchPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            '43\u00B0 Wind',
+                            '43',
                             style: GoogleFonts.aBeeZee(
-                                fontSize: 14, fontWeight: FontWeight.bold),
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            '\u00B0',
+                            style: GoogleFonts.aBeeZee(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.amberAccent[400],
+                            ),
+                          ),
+                          Text(
+                            '  Wind',
+                            style: GoogleFonts.aBeeZee(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white70),
                           ),
                         ],
                       ),
@@ -196,7 +227,8 @@ class SearchPage extends StatelessWidget {
                                           'Precipitation',
                                           style: GoogleFonts.aBeeZee(
                                               fontSize: 14,
-                                              fontWeight: FontWeight.bold),
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.grey),
                                         ),
                                       ],
                                     ),
@@ -231,7 +263,8 @@ class SearchPage extends StatelessWidget {
                                           'Humidity',
                                           style: GoogleFonts.aBeeZee(
                                               fontSize: 14,
-                                              fontWeight: FontWeight.bold),
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.grey),
                                         ),
                                       ],
                                     ),
@@ -258,7 +291,7 @@ class SearchPage extends StatelessWidget {
                           Container(
                             height: 100,
                             color: Colors.white,
-                            width: 1,
+                            width: 0.3,
                           ),
                           Container(
                             width: 130,
@@ -278,7 +311,8 @@ class SearchPage extends StatelessWidget {
                                           'Wind',
                                           style: GoogleFonts.aBeeZee(
                                               fontSize: 14,
-                                              fontWeight: FontWeight.bold),
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.grey),
                                         ),
                                       ],
                                     ),
@@ -313,7 +347,8 @@ class SearchPage extends StatelessWidget {
                                           'Pressure',
                                           style: GoogleFonts.aBeeZee(
                                               fontSize: 14,
-                                              fontWeight: FontWeight.bold),
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.grey),
                                         ),
                                       ],
                                     ),
